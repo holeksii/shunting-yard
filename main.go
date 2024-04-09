@@ -32,7 +32,7 @@ func Menu() {
 func ExpressionMenu(root tree.Node) {
 	log.Println("[1] Evaluate an expression")
 	log.Println("[2] Convert an expression to infix, prefix, and postfix notations")
-	log.Println("[3] Exit")
+	log.Println("[3] Print the expression tree")
 
 	var choice int
 	print("Enter choice: ")
@@ -55,7 +55,8 @@ func ExpressionMenu(root tree.Node) {
 		log.Println("Prefix:", root.Prefix())
 		log.Println("Postfix:", root.Postfix())
 	case 3:
-		return
+		log.Println("Printing the expression tree")
+		tree.PrintTree(root)
 	}
 }
 
