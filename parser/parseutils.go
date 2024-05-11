@@ -44,3 +44,7 @@ func Tokenize(input string) ([]string, error) {
 	}
 	return result, nil
 }
+
+func RemoveSpaces(input string) string {
+	return strings.Replace(input, " ", "", -1)
+}

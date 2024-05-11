@@ -10,6 +10,7 @@ import (
 func Menu() {
 	log.Println("Enter expression")
 	var expression string
+
 	_, err := fmt.Scanln(&expression)
 	if err != nil {
 		log.Println("Invalid expression")
@@ -33,6 +34,7 @@ func ExpressionMenu(root tree.Node) {
 	log.Println("[1] Evaluate an expression")
 	log.Println("[2] Convert an expression to infix, prefix, and postfix notations")
 	log.Println("[3] Print the expression tree")
+	log.Println("[4] Enter another expression")
 
 	var choice int
 	print("Enter choice: ")
@@ -57,7 +59,11 @@ func ExpressionMenu(root tree.Node) {
 	case 3:
 		log.Println("Printing the expression tree")
 		tree.PrintTree(root)
+	case 4:
+		return
 	}
+
+	ExpressionMenu(root)
 }
 
 func main() {
@@ -72,3 +78,5 @@ func main() {
 		Menu()
 	}
 }
+
+// (1+2^3)-(10%3)*4^1
